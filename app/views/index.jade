@@ -1,5 +1,38 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    .row
+      .col-xs-12
+        +lang-switcher(build.languages)
+        .photo-header.text-center
+          +photo-header(profile.photo)
+          +text-header(profile.text_header)
+
+    .row
+      .box.col-xs-12
+        +headers-skills(profile.skills)
+
+    .row
+      .col-xs-12.col-sm-7
+        .box
+          +article(profile.about)
+
+        .box
+          +education(profile.education)
+
+        .box
+          +experience(profile.experience)
+
+      .col-xs-12.col-sm-5
+        .box.clearfix
+          +contacts(profile.contacts)
+
+        .box.clearfix
+          +skills-graph(profile.skills_graph, build.skill_scale)
+
+        .box.clearfix
+          +languages(profile.languages)
+
+        .box.clearfix
+          +hobbies(profile.hobbies)

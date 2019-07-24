@@ -1,0 +1,16 @@
+mixin experience(experience)
+  h2=experience.title
+  for place in experience.places
+    +job-place(place)
+
+mixin job-place(place)
+  .job.clearfix
+    .col-xs-3
+      .where=place.where
+      .year=place.range
+    .col-xs-9
+      .profession=place.position
+      .description
+        for description in place.desc
+          | #{description}
+          br

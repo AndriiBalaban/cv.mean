@@ -1,0 +1,16 @@
+mixin contacts(contacts)
+  h2=contacts.title
+  for contact in contacts.contacts
+    +contact(contact)
+
+mixin contact(contact)
+  .contact-item.pull-left
+    .icon.pull-left.text-center
+      i.fa.fa-fw(class=contact.icon)
+    if(!!contact.title)
+      .title.pull-right=contact.title
+      .description.pull-right
+        +link(contact.link)
+    else
+      .title.one-line.pull-right
+        +link(contact.link)

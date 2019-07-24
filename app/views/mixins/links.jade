@@ -1,0 +1,6 @@
+mixin links(links)
+ - for link in links
+     +link(link)
+
+mixin link(link)
+  a(title=link.title href=link.href target=link.target class=link.class) #{link.text + " "}

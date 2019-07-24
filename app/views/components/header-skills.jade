@@ -1,0 +1,13 @@
+mixin headers-skills(skills)
+  h2=skills.title
+  ul.ckuJl
+    for skill in skills.skills
+      +header-skill(skill)
+  hr
+
+
+mixin header-skill(skill)
+  li.col-xs-6.col-md-3
+    h3=skill.title
+    i(class=skill.icon)
+    p=skill.content.join(", ")

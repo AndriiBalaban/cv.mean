@@ -1,0 +1,7 @@
+mixin hobbies(hobbies)
+  h2=hobbies.title
+  for hobby in hobbies.hobbies
+    +hobby(hobby)
+
+mixin hobby(hobby)
+  +label(hobby)

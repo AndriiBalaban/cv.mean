@@ -1,0 +1,8 @@
+mixin stars(stars)
+  for i in [1,2,3,4,5]
+    if stars > i && stars < i + 1
+      i.fa.fa-star-half.red
+    else if stars >= i
+      i.fa.fa-star.red
+    else if stars < i
+      i.fa.fa-star

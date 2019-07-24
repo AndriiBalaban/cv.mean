@@ -1,7 +1,27 @@
+include mixins/links
+include mixins/stars
+include mixins/label
+include components/lang-switcher
+include components/photo-header
+include components/text-header
+include components/header-skills
+include components/article
+include components/education
+include components/experience
+include components/contacts
+include components/skills-graph
+include components/languages
+include components/hobbies
+
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title=build.title
+    link(rel='stylesheet', href='/stylesheets/vendor.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
   body
     block content
+
+
+script(src="/javascript/vendor.js")
+script(src="/javascript/main.js")
