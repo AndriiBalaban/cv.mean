@@ -1,0 +1,13 @@
+mixin education(education)
+  h2=profile.education.title
+  ul.timeline.clearfix
+    for period in education.periods
+      +period(period)
+
+mixin period(period)
+  li
+    .year.pull-left=period.year
+    .description.pull-right
+      h3=period.title
+      for contentData in period.content
+        p=contentData

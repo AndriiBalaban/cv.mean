@@ -1,0 +1,10 @@
+mixin languages(languages)
+  h2=languages.title
+  .language-skill
+    for language in languages.languages
+      +language(language)
+
+mixin language(language)
+  .language-item=language.title
+    .icon-group.pull-right
+      +stars(language.stars)

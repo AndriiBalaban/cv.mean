@@ -1,0 +1,15 @@
+mixin skills-graph(skills, scales)
+  h2=skills.title
+  .skills
+    for skill in skills.skills
+      +skill-graph(skill)
+  .skill-scale
+    for scale in scales
+      +skill-scale(scale)
+
+mixin skill-graph(skill)
+  .skill-item(data-percent=skill.percent)=skill.title
+
+mixin skill-scale(scale)
+  .scale(class="scale-"+scale.position)
+    span=scale.title
