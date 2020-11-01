@@ -16,12 +16,12 @@ include components/hobbies
 doctype html
 html
   head
-    //title=build.title
-    link(rel='stylesheet', href=process.env.URL_PATH + '/stylesheets/vendor.css')
-    link(rel='stylesheet', href=process.env.URL_PATH + '/stylesheets/main.css')
+    title=build.title
+    link(rel='stylesheet', href='/stylesheets/vendor.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
   body
     block content
 
 
-script(src=process.env.URL_PATH + "/javascript/vendor.js")
-script(src=process.env.URL_PATH + "/javascript/main.js")
+script(src="/javascript/vendor.js")
+script(src="/javascript/main.js")
