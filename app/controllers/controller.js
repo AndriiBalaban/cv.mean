@@ -1,5 +1,5 @@
 module.exports.actionIndex = function (req, res) {
-    res.render('index', {
+    let obj = {
         build: {
             title: 'Balaban Andrew. CV page.',
             languages: [
@@ -294,6 +294,10 @@ module.exports.actionIndex = function (req, res) {
                 ]
             }
         }
-    });
+    };
+
+    res.locals = obj;
+
+    res.render('index');
 };
 
