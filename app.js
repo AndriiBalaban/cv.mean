@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+require('dotenv').config()
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -9,6 +10,7 @@ var routes = require('./app/routes/index');
 var users = require('./app/routes/users');
 
 var app = express();
+var router = express.Router();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app' ,'views'));
@@ -22,8 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(path.join(__dirname, 'public/javascript')));
 
-app.use('/', routes);
-app.use('/users', users);
+router.use('/', routes);
+router.use('/users', users);
+app.use(process.env.URL_PATH, router);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -36,7 +39,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (process.env.MODE === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
